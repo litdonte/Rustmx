@@ -1,0 +1,3 @@
+[workspace]
+members = ["rustmx", "rustmx-macros"]
+resolver = "3"

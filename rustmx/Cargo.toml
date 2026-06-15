@@ -6,3 +6,4 @@ edition = "2024"
 
 [dependencies]
 rustmx-macros = { path = "../rustmx-macros" }
+ulid = "1.2.1"

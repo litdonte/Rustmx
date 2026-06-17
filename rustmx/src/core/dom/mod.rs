@@ -5,7 +5,7 @@ pub struct Html {
 }
 
 impl Html {
-    fn new(content: impl Into<String>) -> Self {
+    pub fn new(content: impl Into<String>) -> Self {
         Html {
             tree: content.into(),
         }

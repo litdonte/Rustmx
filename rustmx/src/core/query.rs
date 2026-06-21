@@ -1,4 +1,4 @@
 pub trait IntoQueryParam {
-    fn key(&self) -> &str;
-    fn value(&self) -> &str;
+    fn key(&self) -> String;
+    fn value(&self) -> String;
 }

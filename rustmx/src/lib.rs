@@ -12,7 +12,8 @@ pub mod prelude {
 mod tests {
     use crate::core::component::Component;
     use crate::core::dom::Html;
-    use rustmx_macros::component;
+    use crate::core::query::IntoQueryParam;
+    use rustmx_macros::{component, query};
 
     struct Scene {
         title: String,
@@ -27,6 +28,11 @@ mod tests {
         fn render(&self) -> Html {
             Html::new(self.scene.title.clone())
         }
+    }
+
+    #[query]
+    pub enum SceneQuery {
+        Character(String),
     }
 
     #[test]
@@ -46,5 +52,17 @@ mod tests {
         .with_id("primary-panel");
         // id starts with the supplied prefix
         assert!(panel.id().value().starts_with("primary-panel"));
+    }
+
+    #[test]
+    fn test_query_has_correct_key() {
+        let query = SceneQuery::Character("Amelia".to_string());
+        assert_eq!(query.key(), "character".to_string());
+    }
+
+    #[test]
+    fn test_query_has_correct_value() {
+        let query = SceneQuery::Character("Amelia".to_string());
+        assert_eq!(query.value(), "Amelia".to_string());
     }
 }

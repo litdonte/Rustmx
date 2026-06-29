@@ -1,7 +1,7 @@
 pub mod component;
 pub mod dom;
+pub mod query;
 pub mod route;
-pub mod query; 
 
 use std::marker::PhantomData;
 
@@ -35,5 +35,11 @@ impl<T> Id<T> {
 impl<T> AsRef<str> for Id<T> {
     fn as_ref(&self) -> &str {
         &self.value
+    }
+}
+
+impl<T> Default for Id<T> {
+    fn default() -> Self {
+        Self::new()
     }
 }

@@ -14,6 +14,7 @@ pub trait RouteInfo {
 }
 
 #[cfg(test)]
+#[allow(dead_code)]
 mod route_tests {
     use crate::core::route::{HttpMethod, RouteInfo};
     use truss_macros::routes;

@@ -33,7 +33,7 @@ pub fn component(_args: TokenStream, input: TokenStream) -> TokenStream {
             pub fn new(#(#field_names: #field_types),*) -> Self {
                 Self {
                     #(#field_names,)*
-                    instance_id: crate::core::Id::new(),
+                    instance_id: crate::core::Id::default(),
                 }
             }
         }

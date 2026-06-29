@@ -9,6 +9,7 @@ pub mod prelude {
 }
 
 #[cfg(test)]
+#[allow(dead_code)]
 mod tests {
     use crate::core::component::Component;
     use crate::core::dom::Html;
